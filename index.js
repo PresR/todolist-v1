@@ -16,6 +16,8 @@ let workItems = ["Show Up"];
 let funItems = ["Watch TV", "Read a Book"];
 // set an empty array for new weekend items
 let weekendItems = ["Relax", "Watch TV"];
+// set an empty array for final exam items
+let finalExamItems = ["Course 1", "Course 2", "Course 3"];
 
 // set EJS as the viewing engine to display html
 app.set('view engine', 'ejs');
@@ -84,6 +86,11 @@ app.get("/fun", function(req, res){
 // display weekend to do list
 app.get("/weekend", function(req, res){
     res.render("list", {listTitle: "Weekend To Do List", newListItems: weekendItems})
+});
+
+// display final exams list
+app.get("/finals", function(req, res){
+    res.render("list", {listTitle: "Final Exam To Do List", newListItems: finalExamItems})
 });
 
 app.listen(3000, function() {
